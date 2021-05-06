@@ -49,8 +49,15 @@ class Database:
             self.db.close()
             print("Koneksi core ditutup")
 
-# # instance class database
+# instance class database
 # db = Database();
+# val = ("182410102056", "Denta", "Teknologi Informasi")
+# if ( db.set_query("INSERT INTO mahasiswa (nim, nama, prodi) VALUES (%s, %s, %s)", val)\
+#         .execute()\
+#         .get_rowcount() > 0 ):
+#     print("Ada data yang ditambahkan")
+
+
 #
 # # tes lihat semua data : CRUD (Read)
 # db.set_query(string_query="select * from mahasiswa")

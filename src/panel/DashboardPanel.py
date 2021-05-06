@@ -23,8 +23,10 @@ class DashboardPanel(FrameMain.WxPanelDashboard):
         self.table_students.AppendCols(len(column_names))
         self.table_students.AppendRows(len(datasets))
 
+        # column label
         for index in range(len(column_names)):
             self.table_students.SetColLabelValue(index, column_names[index])
+        # colum cell data
         for i in range(len(datasets)):
             for j in range(len(datasets[i])):
                 field = "%s"%datasets[i][j]
