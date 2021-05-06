@@ -156,8 +156,19 @@ class WxPanelDashboard ( wx.Panel ):
 
 		bSizer13.Add( self.table_students, 0, wx.ALL, 5 )
 
-		self.m_button12 = wx.Button( self, wx.ID_ANY, u"Tambah Data", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer13.Add( self.m_button12, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
+		bSizer101 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.btn_refresh = wx.Button( self, wx.ID_ANY, u"refresh", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer101.Add( self.btn_refresh, 0, wx.ALL, 5 )
+
+
+		bSizer101.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+
+		self.btn_tambah = wx.Button( self, wx.ID_ANY, u"Tambah", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer101.Add( self.btn_tambah, 0, wx.ALL, 5 )
+
+
+		bSizer13.Add( bSizer101, 1, wx.EXPAND, 5 )
 
 
 		bSizer9.Add( bSizer13, 0, 0, 5 )
@@ -230,11 +241,8 @@ class WxPanelDashboard ( wx.Panel ):
 
 		bSizer12 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button7 = wx.Button( self.m_panel1, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer12.Add( self.m_button7, 0, 0, 5 )
-
-		self.m_button71 = wx.Button( self.m_panel1, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer12.Add( self.m_button71, 0, 0, 5 )
+		self.btn_simpan = wx.Button( self.m_panel1, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer12.Add( self.btn_simpan, 0, 0, 5 )
 
 
 		bSizer10.Add( bSizer12, 0, wx.ALIGN_RIGHT|wx.RIGHT, 5 )
@@ -256,6 +264,9 @@ class WxPanelDashboard ( wx.Panel ):
 		self.m_button3.Bind( wx.EVT_BUTTON, self.btn_dashboard_onclick )
 		self.table_students.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.table_studentsOnGridCmdSelectCell )
 		self.table_students.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.table_studentsOnGridSelectCell )
+		self.btn_refresh.Bind( wx.EVT_BUTTON, self.btn_refresh_onclick )
+		self.btn_tambah.Bind( wx.EVT_BUTTON, self.btn_tambah_onclick )
+		self.btn_simpan.Bind( wx.EVT_BUTTON, self.btn_simpan_onclick )
 
 	def __del__( self ):
 		pass
@@ -269,6 +280,15 @@ class WxPanelDashboard ( wx.Panel ):
 		event.Skip()
 
 	def table_studentsOnGridSelectCell( self, event ):
+		event.Skip()
+
+	def btn_refresh_onclick( self, event ):
+		event.Skip()
+
+	def btn_tambah_onclick( self, event ):
+		event.Skip()
+
+	def btn_simpan_onclick( self, event ):
 		event.Skip()
 
 

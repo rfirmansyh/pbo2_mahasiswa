@@ -15,8 +15,13 @@ class LoginPanel(FrameMain.WxPanelLogin):
                              .fetch()
         if (queryResult is not None):
             if (password == queryResult[3]):
+                self.textCtrl_password.SetValue("")
                 routes.Init.loginPanel.Hide()
                 routes.Init.dashboardPanel.Show()
+            else:
+                wx.MessageBox("Username atau Password tidak sesuai", "Login Gagal")
+                self.textCtrl_password.SetValue("")
         else:
-            wx.MessageBox("Username atau Password tidak sesuai", "Login Gagal")
+            wx.MessageBox("User dengan username tersebut tidak ditemukan", "Login Gagal")
+            self.textCtrl_password.SetValue("")
 
